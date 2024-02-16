@@ -1,0 +1,71 @@
+{"intents": [
+    {"tag": "greetings",
+    "patterns": ["Hello","Hi there","Hey","Good day","Greetings","Hi","Hello there","Hey there","Hi hi","Howdy","Salutations","Hello hi","Hi hello","Hey hi","Hiya",
+    "Hullo","Yo","Heyyo","Ahoy","Sup"],
+    "responses": ["Hello!", "Hey!", "What can I do for you?"]},
+    {
+        "tag": "add company",
+        "patterns":["add company", "how to add company", "create company", "new company"],
+        "responses":["To create a new company, you ..."]
+    },
+    {
+        "tag": "edit company",
+        "patterns":["how to edit company", "edit company", "edit existing company", "change company", "change company settings", "change details", "change comany details"],
+        "responses":["To edit an existing company, you ..."]
+    },
+    {
+        "tag": "delete company",
+        "patterns":["delete company", "destory company", "remove company"],
+        "responses":["To delete an existing company, you ..."]
+    },
+    {
+        "tag": "view company",
+        "patterns":["view company", "see all companies", "see company", "view all companies", "where to see company", "view details", "view company details"],
+        "responses":["To view company details, you ..."]
+    },
+    {
+        "tag": "filter company",
+        "patterns":["how to filter", "filter", "change filter", "filter companies", "filter company", "filter through companies"],
+        "responses":["To filter through companies, you ..."]
+    },
+    {
+        "tag": "log in",
+        "patterns":["how do i log in", "log in", "sign in"],
+        "responses":["To log in, you ..."]
+    },
+    {
+        "tag": "sign up",
+        "patterns":["sign up", "create account", "create a new account", "create an account"],
+        "responses":["To create an account, you ..."]
+    },
+    {
+        "tag": "view location",
+        "patterns":["how can I see location", "how to find company", "where is company", "how to find location of company", "location", "where company", "where address"],
+        "responses":["To see the company's location via map, you ..."]
+    },
+    {
+        "tag": "log out",
+        "patterns":["how to log out", "log out", "log out of existing account"],
+        "responses":["To log out, you ..."]
+    },
+    {
+        "tag": "create location",
+        "patterns":["create location", "insert place", "insert location", "create address", "add address"],
+        "responses":["To add a company's address/location, you ...."]
+    },
+    {
+        "tag": "add resources",
+        "patterns":["add resources"],
+        "responses":["To add resources to your company, you ..."]
+    },
+    {
+        "tag": "add contacts",
+        "patterns":["how to add contacts", "add people", "add contact", "add contacts"],
+        "responses":["To add contacts, you ..."]
+    },
+    {
+        "tag": "edit account",
+        "patterns":["how to edit my account", "edit account", "edit my account", "edit profile", "edit my profile", "change my profile", "change my account"],
+        "responses":["To edit your account, you ..."]
+    }
+]}
