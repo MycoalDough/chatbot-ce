@@ -1,6 +1,16 @@
 {
     "intents": [
         {
+            "tag": "unknown",
+            "patterns": [
+                "balls",
+                "random"
+            ],
+            "responses": [
+                "Sorry, I don't understand. Please ask a question related to the application."
+            ]
+        },
+        {
             "tag": "greetings",
             "patterns": [
                 "Hello",
