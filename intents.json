@@ -20,24 +20,22 @@
                 "Greetings",
                 "Hi",
                 "Hello there",
-                "Hey there",
-                "Hi hi",
-                "Howdy",
-                "Salutations",
-                "Hello hi",
-                "Hi hello",
-                "Hey hi",
-                "Hiya",
-                "Hullo",
-                "Yo",
-                "Heyyo",
-                "Ahoy",
-                "Sup"
+                "Hey there"
             ],
             "responses": [
-                "Hello!",
-                "Hey!",
-                "What can I do for you?"
+                "Hello! I'm here to assist you. Could you please ask a valid question?"
+            ]
+        },
+        {
+            "tag": "bye",
+            "patterns": [
+                "goodbye",
+                "thanks",
+                "bye",
+                "cya"
+            ],
+            "responses": [
+                "No problem! If you ever have another question, feel free to ask!"
             ]
         },
         {
@@ -112,7 +110,8 @@
             "patterns": [
                 "how do i log in",
                 "log in",
-                "sign in"
+                "sign in",
+                "login"
             ],
             "responses": [
                 "To log in, you click on the white \"Log In\" button on the top right corner. If you are already logged in, you should see your profile at the top right corner"
@@ -124,7 +123,8 @@
                 "sign up",
                 "create account",
                 "create a new account",
-                "create an account"
+                "create an account",
+                "new account"
             ],
             "responses": [
                 "To create an account, you click on the green \"Sign Up\" button on the top right corner, or you can click the yellow \"Get started\" button in the homepage"
@@ -150,7 +150,9 @@
             "patterns": [
                 "how to log out",
                 "log out",
-                "log out of existing account"
+                "log out of existing account",
+                "logout",
+                "sign out"
             ],
             "responses": [
                 "To log out, you click on your profile, which should bring a dropdown menu, and then click \"Log Out\""
