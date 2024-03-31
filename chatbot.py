@@ -14,11 +14,12 @@ cors = CORS(app)
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-nltk.download('punkt')
-nltk.download('wordnet')
+nltk.download("punkt")
+nltk.download("wordnet")
 
 import autocorrect as ac
-app.config['DEBUG'] = False
+
+app.config["DEBUG"] = False
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open("intents.json").read())
 
@@ -72,6 +73,7 @@ def get_response(intents_list, intents_json):
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    print(f'Inside predict, message is {request.json["message"]}')
     # auto correct:
     message = request.json["message"]
     all_words = message.split(" ")
@@ -83,8 +85,10 @@ def predict():
     new_message = ac.combine_to_list(corrected)
     print(f"corrected: {new_message}")
 
+    print("before model")
     ints = predict_class(new_message)
     res = get_response(ints, intents)
+    print("after model")
     return jsonify({"response": res})
 
 
