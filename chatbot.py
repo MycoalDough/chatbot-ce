@@ -14,7 +14,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 
 import autocorrect as ac
-
+app.config['DEBUG'] = False
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open("intents.json").read())
 
@@ -85,4 +85,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
