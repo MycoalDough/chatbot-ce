@@ -64,6 +64,8 @@ def predict_class(sentence):
 
 def get_response(intents_list, intents_json):
     print("Inside get_response")
+    print(f"{intents_list}")
+    print(f"{intents_json}")
     tag = intents_list[0]["intent"]
     loi = intents_json["intents"]
 
