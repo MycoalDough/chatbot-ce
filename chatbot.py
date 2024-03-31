@@ -47,11 +47,8 @@ def bag_of_words(sentence):  # Bag o' words!!!!! bahahahahhahh
 
 
 def predict_class(sentence):
-    print("Inside predict_class")
     bow = bag_of_words(sentence)
-    print("After bag_of_words, model.predict")
     res = model.predict(np.array([bow]))[0]
-    print("After model.predict")
     ERROR_THRESHOLD = 0.25
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
 
@@ -61,14 +58,10 @@ def predict_class(sentence):
 
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
-    print("Outside predict_class")
     return return_list
 
 
 def get_response(intents_list, intents_json):
-    print("Inside get_response")
-    print(f"{intents_list}")
-    print(f"{intents_json}")
     tag = intents_list[0]["intent"]
     loi = intents_json["intents"]
 
@@ -76,13 +69,11 @@ def get_response(intents_list, intents_json):
         if i["tag"] == tag:
             result = random.choice(i["responses"])
             break
-    print("Outside get_response")
     return result
 
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    print(f'Inside predict, message is {request.json["message"]}')
     # auto correct:
     message = request.json["message"]
     all_words = message.split(" ")
@@ -92,18 +83,10 @@ def predict():
         corrected.append(ac.auto_correct(w, words))
 
     new_message = ac.combine_to_list(corrected)
-    print(f"corrected: {new_message}")
 
-    print("before model")
     ints = predict_class(new_message)
     res = get_response(ints, intents)
-    print("after model")
     return jsonify({"response": res})
-
-
-@app.route("/")
-def hello_world():
-    return "Hello World!"
 
 
 if __name__ == "__main__":
