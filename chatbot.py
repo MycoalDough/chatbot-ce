@@ -26,6 +26,7 @@ intents = json.loads(open("intents.json").read())
 words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
 model = tf.keras.models.load_model("chatbot_model_001.h5")
+print(f"model = {model}")
 
 
 def clean_sentence(sentence):
@@ -48,7 +49,9 @@ def bag_of_words(sentence):  # Bag o' words!!!!! bahahahahhahh
 def predict_class(sentence):
     print("Inside predict_class")
     bow = bag_of_words(sentence)
+    print("After bag_of_words, model.predict")
     res = model.predict(np.array([bow]))[0]
+    print("After model.predict")
     ERROR_THRESHOLD = 0.25
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
 
