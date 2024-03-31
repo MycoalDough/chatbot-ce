@@ -5,11 +5,11 @@ import numpy as np
 import tensorflow as tf
 
 from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
 
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -90,6 +90,10 @@ def predict():
     res = get_response(ints, intents)
     print("after model")
     return jsonify({"response": res})
+
+@app.route("/")
+def hello_world():
+    return "Hello World!"
 
 
 if __name__ == "__main__":
