@@ -1,6 +1,5 @@
-pip install -r numpy
-pip install -r nltk
-pip install -r tensorflow
-pip install -r flask
-pip install -r flask_cors
-
+numpy
+nltk
+tensorflow
+flask
+flask_cors
