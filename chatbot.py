@@ -6,6 +6,8 @@ import tensorflow as tf
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
+nltk.download('punkt')
+nltk.download('wordnet')
 
 app = Flask(__name__)
 cors = CORS(app)
