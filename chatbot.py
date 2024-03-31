@@ -46,6 +46,7 @@ def bag_of_words(sentence):  # Bag o' words!!!!! bahahahahhahh
 
 
 def predict_class(sentence):
+    print("Inside predict_class")
     bow = bag_of_words(sentence)
     res = model.predict(np.array([bow]))[0]
     ERROR_THRESHOLD = 0.25
@@ -57,10 +58,12 @@ def predict_class(sentence):
 
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
+    print("Outside predict_class")
     return return_list
 
 
 def get_response(intents_list, intents_json):
+    print("Inside get_response")
     tag = intents_list[0]["intent"]
     loi = intents_json["intents"]
 
@@ -68,6 +71,7 @@ def get_response(intents_list, intents_json):
         if i["tag"] == tag:
             result = random.choice(i["responses"])
             break
+    print("Outside get_response")
     return result
 
 
@@ -90,6 +94,7 @@ def predict():
     res = get_response(ints, intents)
     print("after model")
     return jsonify({"response": res})
+
 
 @app.route("/")
 def hello_world():
